@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoha Aziz — Cybersecurity Student & Web Developer</title>
+<meta name="description" content="Portfolio of Zoha Aziz, BS Cybersecurity student learning ethical hacking and web development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Matrix rain background canvas -->
+<canvas id="matrix-canvas"></canvas>
+
+<!-- Scanline overlay -->
+<div class="scanline-overlay" aria-hidden="true"></div>
+
+<!-- Custom cursor dot -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <span class="logo-bracket">&lt;</span>Zoha_Aziz<span class="logo-bracket">/&gt;</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link"><span class="nav-idx">~/</span>home</a>
+      <a href="#about" class="nav-link"><span class="nav-idx">~/</span>about</a>
+      <a href="#skills" class="nav-link"><span class="nav-idx">~/</span>skills</a>
+      <a href="#projects" class="nav-link"><span class="nav-idx">~/</span>projects</a>
+      <a href="#achievements" class="nav-link"><span class="nav-idx">~/</span>achievements</a>
+      <a href="#education" class="nav-link"><span class="nav-idx">~/</span>education</a>
+      <a href="#experience" class="nav-link"><span class="nav-idx">~/</span>experience</a>
+      <a href="#contact" class="nav-link"><span class="nav-idx">~/</span>contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">connect()</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="terminal-window" id="heroTerminal">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="terminal-path">zoha@aziz:~$</span>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <p class="term-line"><span class="prompt">$</span> <span class="cmd" id="typeLine1"></span><span class="cursor-blink" id="blink1">▌</span></p>
+        <p class="term-line term-output" id="outLine1" style="opacity:0;"></p>
+        <p class="term-line" id="line2Wrap" style="opacity:0;"><span class="prompt">$</span> <span class="cmd" id="typeLine2"></span><span class="cursor-blink" id="blink2">▌</span></p>
+        <p class="term-line term-output" id="outLine2" style="opacity:0;"></p>
+        <p class="term-line" id="line3Wrap" style="opacity:0;"><span class="prompt">$</span> <span class="cmd" id="typeLine3"></span><span class="cursor-blink" id="blink3">▌</span></p>
+        <div class="term-tags" id="termTags" style="opacity:0;"></div>
+      </div>
+    </div>
+
+    <div class="hero-actions" id="heroActions" style="opacity:0;">
+      <a href="#projects" class="btn btn-primary">
+        <span>View Projects</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="assets/Zoha_Aziz_CV.pdf" class="btn btn-ghost" download>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0l-3-3m3 3l3-3M2.5 13h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Download CV</span>
+      </a>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <p class="section-eyebrow">$ cat about.txt</p>
+    <h2 class="section-title">About<span class="accent">_</span>Me</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm <strong>Zoha Aziz</strong>, a 4th semester BS Cybersecurity student at Air University, Aerospace and Aviation Campus, Kamra. I spend my time somewhere between breaking things apart to understand them and building things from scratch — currently learning ethical hacking on one side, and web development on the other.</p>
+        <p>My work ranges from SIEM detection rules and firewall configuration to writing cryptographic algorithms in raw C++ without external libraries — I like understanding systems at the level where nothing is hidden from me. Outside the terminal, I read books and play basketball to stay balanced.</p>
+        <div class="about-stats">
+          <div class="stat-box">
+            <span class="stat-num" data-target="83">0</span>
+            <span class="stat-label">Day longest TryHackMe streak</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" data-target="4">0</span>
+            <span class="stat-label">Semesters completed</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" data-target="12">0</span>
+            <span class="stat-label">Labs &amp; projects built</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-avatar">
+        <div class="avatar-frame">
+          <img src="assets/zoha_aziz.jpg" alt="Zoha Aziz" class="avatar-img">
+          <div class="avatar-scan"></div>
+        </div>
+        <div class="avatar-tag">// zoha_aziz.jpg — loaded successfully</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section section-alt" id="skills">
+  <div class="section-inner">
+    <p class="section-eyebrow">$ ls ~/skills --tree</p>
+    <h2 class="section-title">Tools<span class="accent">&amp;</span>Stack</h2>
+
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><span class="cat-icon">🛡</span> Security &amp; Networking</h3>
+        <div class="skill-tags">
+          <span class="tag">Wireshark</span>
+          <span class="tag">Nmap</span>
+          <span class="tag">Kali Linux</span>
+          <span class="tag">Burp Suite</span>
+          <span class="tag">Wazuh SIEM</span>
+          <span class="tag">OPNsense</span>
+          <span class="tag">hping3</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3><span class="cat-icon">💻</span> Programming</h3>
+        <div class="skill-tags">
+          <span class="tag">C++</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3><span class="cat-icon">🧰</span> Tools &amp; Platforms</h3>
+        <div class="skill-tags">
+          <span class="tag">VS Code</span>
+          <span class="tag">WinSCP</span>
+          <span class="tag">Cisco Packet Tracer</span>
+          <span class="tag">Dev-C++</span>
+          <span class="tag">IntelliJ IDEA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="section-inner">
+    <p class="section-eyebrow">$ ls ~/projects</p>
+    <h2 class="section-title">Selected<span class="accent">_</span>Work</h2>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">01</span>
+          <span class="project-status">SIEM</span>
+        </div>
+        <h3>Removable Medium Detection — Wazuh</h3>
+        <p>Built and presented a detection use-case on Wazuh SIEM to flag unauthorized removable media (USB) access in real time, as part of a 5-member team project covering rule design and alert triage.</p>
+        <div class="project-tags">
+          <span class="ptag">Wazuh</span><span class="ptag">SIEM</span><span class="ptag">Detection Engineering</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">02</span>
+          <span class="project-status">automation</span>
+        </div>
+        <h3>Automated Backup System — Wazuh</h3>
+        <p>Designed an automated backup workflow monitored through Wazuh, ensuring scheduled data protection with alerting on backup failures or tampering.</p>
+        <div class="project-tags">
+          <span class="ptag">Wazuh</span><span class="ptag">Automation</span><span class="ptag">Monitoring</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">03</span>
+          <span class="project-status">from scratch</span>
+        </div>
+        <h3>Cryptography Engine in Pure C++</h3>
+        <p>Implemented SHA-256, AES-256 and RSA entirely from scratch in C++ — no external crypto libraries — built and tested for Dev-C++ compatibility, with a full lab report.</p>
+        <div class="project-tags">
+          <span class="ptag">C++</span><span class="ptag">AES-256</span><span class="ptag">RSA</span><span class="ptag">SHA-256</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">04</span>
+          <span class="project-status">optimized</span>
+        </div>
+        <h3>AES Memory Optimization</h3>
+        <p>Analyzed and optimized the memory footprint of an AES encryption implementation, reducing runtime overhead while preserving cryptographic correctness.</p>
+        <div class="project-tags">
+          <span class="ptag">C++</span><span class="ptag">AES</span><span class="ptag">Performance</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">05</span>
+          <span class="project-status">exploited</span>
+        </div>
+        <h3>DVWA Web Vulnerability Exploitation</h3>
+        <p>Exploited SQL injection, XSS, CSRF and other OWASP-listed vulnerabilities on Damn Vulnerable Web Application across all difficulty levels to study real attack chains.</p>
+        <div class="project-tags">
+          <span class="ptag">DVWA</span><span class="ptag">Burp Suite</span><span class="ptag">Web Security</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">06</span>
+          <span class="project-status">hardware logic</span>
+        </div>
+        <h3>Secure Home Lock System</h3>
+        <p>Digital Logic Design project simulating a secure home lock system using logic gates and sequential circuits, covering access control at the hardware level.</p>
+        <div class="project-tags">
+          <span class="ptag">DLD</span><span class="ptag">Logic Gates</span><span class="ptag">Access Control</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">07</span>
+          <span class="project-status">simulated</span>
+        </div>
+        <h3>IoT-Based Smart Home</h3>
+        <p>Simulated a smart home network in Cisco Packet Tracer connecting IoT sensors and actuators, with device communication and basic network segmentation.</p>
+        <div class="project-tags">
+          <span class="ptag">Cisco Packet Tracer</span><span class="ptag">IoT</span><span class="ptag">Networking</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">08</span>
+          <span class="project-status">console app</span>
+        </div>
+        <h3>Task Scheduler</h3>
+        <p>Built a C++ console application to schedule and manage tasks by priority and deadline, applying core data structures for efficient task ordering.</p>
+        <div class="project-tags">
+          <span class="ptag">C++</span><span class="ptag">Data Structures</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">09</span>
+          <span class="project-status">database app</span>
+        </div>
+        <h3>Library Management System</h3>
+        <p>Developed a Library Management System to handle book records, member accounts, and issue/return tracking through a structured, menu-driven interface.</p>
+        <div class="project-tags">
+          <span class="ptag">C++</span><span class="ptag">File Handling</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">10</span>
+          <span class="project-status">quiz engine</span>
+        </div>
+        <h3>Cybersecurity Quiz — C++ File Handling</h3>
+        <p>Built a scenario-based cybersecurity quiz application in C++, using file handling to store questions, track scores, and persist user progress between sessions.</p>
+        <div class="project-tags">
+          <span class="ptag">C++</span><span class="ptag">File Handling</span><span class="ptag">Cybersecurity</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">11</span>
+          <span class="project-status">algorithm</span>
+        </div>
+        <h3>9x9 Chess Board</h3>
+        <p>Extended standard chess logic to a custom 9x9 board, implementing piece movement rules, board state management and move validation in code.</p>
+        <div class="project-tags">
+          <span class="ptag">C++</span><span class="ptag">Algorithms</span><span class="ptag">OOP</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <span class="project-index">12</span>
+          <span class="project-status">web app</span>
+        </div>
+        <h3>Women's Society Website</h3>
+        <p>Designed and built a website for a women's society platform using HTML, CSS and JavaScript, focused on clean navigation and an accessible, welcoming interface.</p>
+        <div class="project-tags">
+          <span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section section-alt" id="achievements">
+  <div class="section-inner">
+    <p class="section-eyebrow">$ cat ~/achievements.log</p>
+    <h2 class="section-title">TryHackMe<span class="accent">_</span>Log</h2>
+
+    <div class="thm-panel">
+      <div class="thm-row">
+        <div class="thm-item">
+          <span class="thm-num">🏆 top 8%</span>
+          <span class="thm-label">Global rank — 179,438 pts</span>
+        </div>
+        <div class="thm-item">
+          <span class="thm-num">🎖 13</span>
+          <span class="thm-label">Badges earned</span>
+        </div>
+        <div class="thm-item">
+          <span class="thm-num">📦 72</span>
+          <span class="thm-label">Rooms completed</span>
+        </div>
+        <div class="thm-item">
+          <span class="thm-num">🔥 83</span>
+          <span class="thm-label">Day longest streak</span>
+        </div>
+      </div>
+      <p class="thm-note">// Full breakdown of rooms, badges and league standings on my profile — internship report submitted based on this platform work.</p>
+      <a href="https://tryhackme.com/p/ZohaAziz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm thm-link">
+        <span>View TryHackMe Profile</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+  <div class="section-inner">
+    <p class="section-eyebrow">$ cat education.yml</p>
+    <h2 class="section-title">Education</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-tag">4th semester completed</span>
+          <h3>BS Cybersecurity</h3>
+          <p class="timeline-sub">Air University — Aerospace and Aviation Campus, Kamra</p>
+          <p>Section CYS 4B &middot; Current CGPA: <strong>3.00</strong>. Coursework spans network security, cryptography, operating systems, secure software design and calculus.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK EXPERIENCE -->
+<section class="section section-alt" id="experience">
+  <div class="section-inner">
+    <p class="section-eyebrow">$ cat experience.log</p>
+    <h2 class="section-title">Work<span class="accent">_</span>Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-tag">Ongoing</span>
+          <h3>Cybersecurity Intern</h3>
+          <p class="timeline-sub">Pakistan International Airlines (PIA)</p>
+          <p>Currently doing an internship at PIA, applying cybersecurity coursework and hands-on lab experience in a real organizational environment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <p class="section-eyebrow">$ ./connect.sh</p>
+    <h2 class="section-title">Let's<span class="accent">_</span>Talk</h2>
+    <p class="contact-intro">Open to internships, collaborations, and anyone who wants to talk security or code. Drop a message below or reach out directly.</p>
+
+    <div class="contact-grid">
+      <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/zohaaziz18@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from your portfolio site">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="What's on your mind?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="sendBtn">
+          <span>Send Message</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M14 2H6M14 2v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+
+      <div class="contact-info">
+        <a href="mailto:zohaaziz18@gmail.com" class="contact-link">
+          <span class="contact-link-icon">✉</span>
+          <div>
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">zohaaziz18@gmail.com</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/zoha-aziz-08285232b" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-icon">in</span>
+          <div>
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-value">zoha-aziz-08285232b</span>
+          </div>
+        </a>
+        <div class="contact-status">
+          <span class="status-dot"></span>
+          <span>Currently available for internship opportunities</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>&copy; <span id="year"></span> Zoha Aziz. Built with HTML, CSS &amp; JS — no frameworks, no database.</span>
+    <a href="#home" class="footer-top">back to top ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
