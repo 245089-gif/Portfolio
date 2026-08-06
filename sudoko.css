@@ -1,0 +1,275 @@
+/* ===== Base tokens ===== */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: "Fredoka", sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.hidden {
+    display: none;
+}
+
+/* ===== Light / Dark themes ===== */
+body.light {
+    background-color: #FBF7EF;
+    color: #223A5E;
+}
+body.dark {
+    background-color: #16213E;
+    color: #F5F5F5;
+}
+
+/* ===== Header ===== */
+header {
+    text-align: center;
+    padding: 20px 10px;
+    border-bottom: 3px solid #223A5E;
+    background: linear-gradient(180deg, #FFD166 0%, transparent 100%);
+}
+body.dark header {
+    background: linear-gradient(180deg, #E9C46A33 0%, transparent 100%);
+    border-bottom: 3px solid #E9C46A;
+}
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+}
+h3 {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+}
+#setup-game {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#setup-game > * {
+    padding: 10px 25px;
+}
+#setup-game label {
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+input[type="radio"] {
+    cursor: pointer;
+    accent-color: #5A189A;
+}
+
+/* ===== Start / pause buttons ===== */
+#start-btn, #pause-btn {
+    margin-top: 10px;
+    padding: 12px 30px;
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #FBF7EF;
+    background-color: #5A189A;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #33085A;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+#pause-btn {
+    padding: 8px 22px;
+    font-size: 14px;
+    margin-top: 0;
+}
+#start-btn:hover, #pause-btn:hover {
+    transform: translateY(-2px);
+}
+#start-btn:active, #pause-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #33085A;
+}
+body.dark #start-btn, body.dark #pause-btn {
+    background-color: #7B2CBF;
+    box-shadow: 0 4px 0 #3C096C;
+}
+body.dark #start-btn:active, body.dark #pause-btn:active {
+    box-shadow: 0 2px 0 #3C096C;
+}
+
+/* ===== Stats & message ===== */
+#stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+#timer, #lives {
+    font-family: "DM Mono", monospace;
+    font-size: 22px;
+    font-weight: 500;
+}
+#message {
+    text-align: center;
+    max-width: 320px;
+    margin: 15px auto 0;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+#message.win {
+    background-color: #06A77D33;
+    color: #06A77D;
+    border: 2px solid #06A77D;
+}
+#message.lose {
+    background-color: #EF476F33;
+    color: #EF476F;
+    border: 2px solid #EF476F;
+}
+#message.paused {
+    background-color: #22345533;
+    color: #223A5E;
+    border: 2px solid #223A5E;
+}
+body.dark #message.paused {
+    background-color: #E9C46A22;
+    color: #E9C46A;
+    border: 2px solid #E9C46A;
+}
+
+/* ===== Game layout ===== */
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 25px 0 40px;
+}
+#board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    width: 450px;
+    height: 450px;
+    border: 4px solid #223A5E;
+    border-radius: 6px;
+    overflow: hidden;
+}
+body.dark #board {
+    border: 4px solid #E9C46A;
+}
+
+/* ===== Tiles ===== */
+.tile {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Mono", monospace;
+    font-size: 22px;
+    border: 1px solid #223A5E33;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+body.dark .tile {
+    border: 1px solid #E9C46A33;
+}
+
+/* Alternating shading so each 3x3 box reads as its own block */
+.tile.box-a {
+    background-color: #223A5E0d;
+}
+.tile.box-b {
+    background-color: transparent;
+}
+body.dark .tile.box-a {
+    background-color: #F5F5F512;
+}
+body.dark .tile.box-b {
+    background-color: transparent;
+}
+
+.tile:hover {
+    background-color: #FFD16655;
+}
+body.dark .tile:hover {
+    background-color: #E9C46A33;
+}
+.tile.given {
+    font-weight: 700;
+    cursor: default;
+}
+.tile.given:hover {
+    background-color: inherit;
+}
+.tile.selected {
+    background-color: #FFD166;
+    color: #223A5E;
+}
+.tile.correct {
+    color: #06A77D;
+}
+.tile.incorrect {
+    color: #EF476F;
+}
+.rightBorder {
+    border-right: 3px solid #223A5E;
+}
+.bottomBorder {
+    border-bottom: 3px solid #223A5E;
+}
+body.dark .rightBorder {
+    border-right: 3px solid #E9C46A;
+}
+body.dark .bottomBorder {
+    border-bottom: 3px solid #E9C46A;
+}
+
+/* ===== Number pad ===== */
+#number-container {
+    display: flex;
+    gap: 10px;
+}
+#number-container p {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Mono", monospace;
+    font-size: 20px;
+    font-weight: 500;
+    border: 2px solid #223A5E;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+body.dark #number-container p {
+    border: 2px solid #E9C46A;
+}
+#number-container p:hover {
+    transform: translateY(-3px);
+}
+#number-container p.selected {
+    background-color: #5A189A;
+    color: #FBF7EF;
+    border-color: #5A189A;
+}
+body.dark #number-container p.selected {
+    background-color: #7B2CBF;
+    border-color: #7B2CBF;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #223A5E;
+    color: #FBF7EF;
+    text-align: center;
+    padding: 12px;
+}
+body.dark footer {
+    background-color: #0F1730;
+}

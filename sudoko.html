@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sudoku Game</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="sudoko.css">
+        <script src="sudoko.js" defer></script>
+    </head>
+    <body class="light">
+        <header>
+            <h1>Sudoku</h1>
+            <div id="setup-game">
+                <div id="diff">
+                    <h3>Choose Difficulty:</h3>
+                    <label for="diff-1"><input id="diff-1" type="radio" name="diff" value="easy" checked>Easy</label>
+                    <label for="diff-2"><input id="diff-2" type="radio" name="diff" value="medium">Medium</label>
+                    <label for="diff-3"><input id="diff-3" type="radio" name="diff" value="hard">Hard</label>
+                </div>
+                <div id="time">
+                    <h3>Choose Time:</h3>
+                    <label for="time-1"><input id="time-1" type="radio" name="time" value="three" checked>3 min</label>
+                    <label for="time-2"><input id="time-2" type="radio" name="time" value="five">5 min</label>
+                    <label for="time-3"><input id="time-3" type="radio" name="time" value="ten">10 min</label>
+                </div>
+                <div id="theme">
+                    <h3>Choose Theme:</h3>
+                    <label><input id="theme-1" type="radio" name="theme" value="light" checked>Light</label>
+                    <label><input id="theme-2" type="radio" name="theme" value="dark">Dark</label>
+                </div>
+            </div>
+            <div>
+                <button id="start-btn">CREATE NEW GAME</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="stats">
+                <p id="timer">00:00</p>
+                <button id="pause-btn">Pause</button>
+                <p id="lives"></p>
+            </div>
+
+            <div id="message" class="hidden"></div>
+
+            <div id="game">
+                <div id="board"></div>
+                <div id="number-container">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p>8</p>
+                    <p>9</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made by Zoha Aziz</p>
+        </footer>
+    </body>
+</html>
